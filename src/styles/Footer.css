@@ -1,0 +1,15 @@
+.footer {
+  background-color: #0E2A57;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.footer h3 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.footer h3::first-letter {
+  color: #F28C28;
+}
