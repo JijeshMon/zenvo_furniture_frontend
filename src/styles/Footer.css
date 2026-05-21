@@ -1,26 +1,28 @@
 .footer {
   background-color: #0E2A57;
-
   color: white;
-
   text-align: center;
-
-  padding: 0px;
-
-  position: fixed;
-
-  bottom: 0;
-  left: 0;
-
+  padding: 20px 0;
   width: 100%;
+  margin-top: auto;
+  /* Remove position: fixed */
+}
 
-  z-index: 1000;
+/* If you want footer to stay at bottom of page even with less content */
+/* Wrap your main content in a container div with min-height */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
 
 .footer h3 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
-
   margin-bottom: 10px;
 }
 
@@ -29,25 +31,23 @@
 }
 
 .footer p {
-  font-size: 16px;
+  font-size: 10px;
   color: #d1d5db;
   letter-spacing: 0.5px;
 }
 
 /* MOBILE RESPONSIVE */
-
 @media screen and (max-width: 768px) {
-
   .footer {
-    padding: 25px 15px;
+    padding: 15px 0;
   }
 
   .footer h3 {
-    font-size: 24px;
+    font-size: 15px;
   }
 
   .footer p {
-    font-size: 14px;
+    font-size: 10px;
     line-height: 1.6;
   }
 }
