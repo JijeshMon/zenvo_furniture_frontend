@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
+import API_URL from "../config";
 
 function Login({ onLogin }) {
   const navigate = useNavigate();
@@ -18,7 +19,8 @@ function Login({ onLogin }) {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8081/auth/login', {
+      
+        const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

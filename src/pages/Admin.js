@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getToken, logout, authFetch } from '../utils/auth';
 import '../styles/Admin.css';
+import API_URL from "../config";
 
 function Admin({ onLogout }) {
   const navigate = useNavigate();

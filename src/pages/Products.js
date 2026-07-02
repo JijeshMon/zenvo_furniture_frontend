@@ -1,6 +1,7 @@
 import ProductCard from '../components/ProductCard';
 import { useState, useEffect } from 'react';
 import '../styles/Products.css';
+import API_URL from "../config";
 
 function Products() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -16,7 +17,10 @@ function Products() {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:8081/product/getAllProducts', {
+      
+
+      const response = await  fetch(`${API_URL}/product/getAllProducts`, {
+       
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
