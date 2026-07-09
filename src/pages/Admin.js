@@ -35,8 +35,8 @@ function Admin({ onLogout }) {
   };
 
   const fetchProducts = useCallback(async () => {
-    try {
-      const response = await authFetch('${API_URL}/product/getAllProducts', {
+    try {                               
+      const response = await authFetch(`${API_URL}/product/getAllProducts`, {
         method: 'GET',
       });
       
@@ -101,8 +101,8 @@ function Admin({ onLogout }) {
         : formData;
       
       const url = editingProduct 
-        ? '${API_URL}/product/editProduct'
-        : '${API_URL}/product/addProduct';
+        ? `${API_URL}/product/editProduct`
+        : `${API_URL}/product/addProduct`;
       
       const method = editingProduct ? 'PUT' : 'POST';
       
