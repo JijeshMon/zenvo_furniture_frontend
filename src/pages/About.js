@@ -1,10 +1,13 @@
 import '../styles/About.css';
 
 function About() {
-  const openGoogleMaps = () => {
-    window.open("https://www.google.com/maps/place/10%C2%B008'14.3%22N+76%C2%B028'02.6%22E/@10.1372922,76.4648132,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.1372922!4d76.4673881?hl=en&entry=ttu", "_blank");
-  };
-
+ const openGoogleMaps = () => {
+  window.open(
+    "https://www.google.com/maps/dir/?api=1&destination=10.171267,76.5059381",
+    "_blank",
+    "noopener,noreferrer"
+  );
+};
   return (
     <div className="about-page">
       <div className="about-hero">
@@ -90,36 +93,30 @@ function About() {
         </div>
       </div>
 
-      {/* Map Section - Working Google Maps */}
-      <div className="map-section">
-        <h3>Visit Our Showroom</h3>
-        <div className="map-container">
-          {/* Embedded Google Map */}
-          <iframe
-            title="Zenvo Furniture Location"
-            src="https://maps.app.goo.gl/xoXhx1Hx257Z9XEe9?g_st=awb"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-          
-          {/* Clickable link below map */}
-          <div className="map-link">
-            <i className="fas fa-external-link-alt"></i>
-            <a 
-              href="https://www.google.com/maps/place/10%C2%B008'14.3%22N+76%C2%B028'02.6%22E/@10.1372922,76.4648132,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.1372922!4d76.4673881?hl=en&entry=ttu" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onClick={openGoogleMaps}
-            >
-              Open in Google Maps
-            </a>
-          </div>
-        </div>
-      </div>
+     {/* Map Section */}
+<div className="map-section">
+  <h3>Visit Our Showroom</h3>
+
+  <div className="map-container">
+    <iframe
+      title="ZENVO Industries Location"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4658.336214162844!2d76.5059381!3d10.171267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07fd0065b7f5e7%3A0x3f9bc6eb54cb5ff!2sZENVO%20INDUSTRIES!5e1!3m2!1sen!2sin!4v1783615195160!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="strict-origin-when-cross-origin"
+    />
+
+    <div className="map-link">
+  <button onClick={openGoogleMaps} className="map-btn">
+    <i className="fas fa-map-marker-alt"></i>
+    <span style={{ marginLeft: "8px" }}>Open in Google Maps</span>
+  </button>
+</div>
+  </div>
+</div>
     </div>
   );
 }

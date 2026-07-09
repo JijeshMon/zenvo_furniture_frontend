@@ -4,7 +4,7 @@ import '../styles/Products.css';
 import API_URL from "../config";
 
 function Products() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+ /* const [selectedProduct, setSelectedProduct] = useState(null);*/
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
