@@ -4,6 +4,7 @@ import { getToken, logout, authFetch } from '../utils/auth';
 import '../styles/Admin.css';
 import API_URL from "../config";
 
+
 function Admin({ onLogout }) {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('products');
@@ -35,7 +36,7 @@ function Admin({ onLogout }) {
 
   const fetchProducts = useCallback(async () => {
     try {
-      const response = await authFetch('http://localhost:8081/product/getAllProducts', {
+      const response = await authFetch('${API_URL}/product/getAllProducts', {
         method: 'GET',
       });
       
@@ -100,8 +101,8 @@ function Admin({ onLogout }) {
         : formData;
       
       const url = editingProduct 
-        ? 'http://localhost:8081/product/editProduct'
-        : 'http://localhost:8081/product/addProduct';
+        ? '${API_URL}/product/editProduct'
+        : '${API_URL}/product/addProduct';
       
       const method = editingProduct ? 'PUT' : 'POST';
       
@@ -134,7 +135,7 @@ showNotification('Product deleted successfully', 'success');
     if (window.confirm('Are you sure you want to delete this product?')) {
       setLoading(true);
       try {
-        const response = await authFetch(`http://localhost:8081/product/deleteProduct/${id}`, {
+        const response = await authFetch(`${API_URL}/product/deleteProduct/${id}`, {
           method: 'DELETE',
         });
         
